@@ -1,0 +1,653 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-23 08:25+0000\n"
+"PO-Revision-Date: 2020-06-09 11:12+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#: hospital/serializers.py:84 hospital/serializers.py:105
+#: patient/serializers.py:94 patient/serializers.py:107
+msgid "Each Hospital must have only 5 Applications"
+msgstr "Cada Hospital deve ter apenas 5 Aplicações"
+
+#: hospital/serializers.py:141
+msgid "Cannot delete centre module because it is referenced to a patient."
+msgstr "Não é possível excluir o módulo central porque ele é referenciado a um paciente."
+
+#: hospital/viewsets.py:100
+msgid "Hospital deleted successfully."
+msgstr "Hospital deletado com sucesso."
+
+#: invoicing/templates/invoice_history_report.html:28
+#: production/templates/delivery_report.html:68
+msgid "From Date"
+msgstr "Data De"
+
+#: invoicing/templates/invoice_history_report.html:31
+#: production/templates/delivery_report.html:71
+msgid "To Date"
+msgstr "Até à data"
+
+#: invoicing/templates/invoice_history_report.html:41
+#: invoicing/templates/simulator_report_by_patient.html:34
+#: production/templates/delivery_report.html:32
+#: production/templates/report.html:81
+msgid "Hospital Name"
+msgstr "Nome do Hospital"
+
+#: invoicing/templates/invoice_history_report.html:44
+#: invoicing/templates/simulator_report_by_patient.html:52
+#: production/templates/delivery_report.html:64
+#: production/templates/report.html:35
+msgid "Patient Name"
+msgstr "Nome do Paciente"
+
+#: invoicing/templates/invoice_history_report.html:56
+#: invoicing/templates/simulator_report_by_medicine.html:35
+#: invoicing/templates/simulator_report_by_patient.html:64
+#: production/templates/report.html:104
+msgid "CN Number"
+msgstr "Número NC"
+
+#: invoicing/templates/invoice_history_report.html:58
+#: invoicing/templates/simulator_report_by_medicine.html:38
+#: invoicing/templates/simulator_report_by_patient.html:67
+#: production/templates/report.html:108
+msgid "Medicine Name"
+msgstr "Nome do medicamento"
+
+#: invoicing/templates/invoice_history_report.html:60
+msgid "Entry/Out"
+msgstr "Entrada/Saída"
+
+#: invoicing/templates/invoice_history_report.html:62
+msgid "Quantity"
+msgstr "Quantidade"
+
+#: invoicing/templates/invoice_history_report.html:64
+msgid "Box"
+msgstr "Caixa"
+
+#: invoicing/templates/invoice_history_report.html:66
+msgid "Date"
+msgstr "Data"
+
+#: invoicing/templates/invoice_history_report.html:68
+msgid "User"
+msgstr "Usuário"
+
+#: invoicing/templates/simulator_report_by_medicine.html:26
+msgid "Medication Billing Simulation Report"
+msgstr "Relatório de Simulação de Faturamento de Medicamentos"
+
+#: invoicing/templates/simulator_report_by_medicine.html:41
+#: invoicing/templates/simulator_report_by_patient.html:72
+msgid "Boxes"
+msgstr "Caixas"
+
+#: invoicing/templates/simulator_report_by_patient.html:28
+msgid "Billing simulation per Patient"
+msgstr "Simulação de faturamento por paciente"
+
+#: invoicing/templates/simulator_report_by_patient.html:37
+msgid "Start Date"
+msgstr "Data Inicial"
+
+#: invoicing/templates/simulator_report_by_patient.html:40
+msgid "End Date"
+msgstr "Data Final"
+
+#: invoicing/templates/simulator_report_by_patient.html:75
+msgid "Barcode"
+msgstr "Código de barras"
+
+#: invoicing/viewsets.py:158 invoicing/viewsets.py:204
+msgid "Please validate patient first"
+msgstr "Por favor, valide o paciente primeiro"
+
+#: invoicing/viewsets.py:218
+msgid "Added patient successfully"
+msgstr "Paciente adicionado com sucesso"
+
+#: invoicing/viewsets.py:226
+msgid "Linked patient successfully"
+msgstr "Paciente vinculado com sucesso"
+
+#: invoicing/viewsets.py:229
+msgid "Please enter valid type for validating patient"
+msgstr "Insira um tipo válido para validar o paciente"
+
+#: invoicing/viewsets.py:246
+msgid "Skipped Medicine successfully"
+msgstr "Medicina ignorada com sucesso"
+
+#: invoicing/viewsets.py:270 invoicing/viewsets.py:316
+msgid "Added Medicine successfully"
+msgstr "Medicamento adicionado com sucesso"
+
+#: invoicing/viewsets.py:356 invoicing/viewsets.py:377
+#: invoicing/viewsets.py:397
+msgid "Relation created for medicine successfully"
+msgstr "Relação criada para medicina com sucesso"
+
+#: invoicing/viewsets.py:400
+msgid "Please enter valid link type for validating medicine"
+msgstr "Insira o tipo de link válido para validar o medicamento"
+
+#: invoicing/viewsets.py:403
+msgid "Please enter valid select type for validating medicine"
+msgstr "Insira um tipo de seleção válido para validar o medicamento"
+
+#: notifications/models.py:47 timedi_auth/models.py:166
+msgid "created at"
+msgstr "criado em"
+
+#: patient/serializers.py:72
+msgid "Production already created till {}"
+msgstr "produção já criada até {}"
+
+#: patient/viewsets.py:159
+msgid "Patient deleted successfully."
+msgstr "Paciente deletado com sucesso."
+
+#: patient/viewsets.py:218
+msgid "Modules updated successfully."
+msgstr "Módulos atualizados com sucesso."
+
+#: patient/viewsets.py:226
+msgid "Module updated successfully."
+msgstr "Módulo atualizado com sucesso."
+
+#: pharmacist_control/viewsets.py:73
+msgid "Posologies validated successfully."
+msgstr "Posologias validadas com sucesso."
+
+#: planning/viewsets.py:47
+msgid "Medicine already present for this patient."
+msgstr "Medicamentos já presentes para este paciente."
+
+#: production/serializers.py:34
+msgid "patients list is empty"
+msgstr "lista de pacientes está vazia"
+
+#: production/serializers.py:37 production/serializers.py:51
+msgid "to date should be greater than from date."
+msgstr "até à data deve ser maior do que a data de início."
+
+#: production/templates/delivery_report.html:36
+msgid "Production Date"
+msgstr "Data de Produção"
+
+#: production/templates/delivery_report.html:51
+msgid "Pharmacy"
+msgstr "Farmácia"
+
+#: production/templates/delivery_report.html:55
+msgid "Hospital"
+msgstr "Hospital"
+
+#: production/templates/delivery_report.html:74
+msgid "Total"
+msgstr "Total"
+
+#: production/templates/delivery_report.html:74
+msgid "Intake"
+msgstr "Ingestão"
+
+#: production/templates/delivery_report.html:77
+#: production/templates/delivery_report.html:84
+msgid "Comments"
+msgstr "Comentários"
+
+#: production/templates/delivery_report.html:80
+#: production/templates/delivery_report.html:87
+msgid "Ok"
+msgstr "Está bem"
+
+#: production/templates/delivery_report.html:121
+msgid "Total Patients:"
+msgstr "Total de doentes:"
+
+#: production/templates/delivery_report.html:133
+msgid "Pharmacist:"
+msgstr "Farmacêutico:"
+
+#: production/templates/delivery_report.html:139
+#: production/templates/delivery_report.html:162
+msgid "Signature:"
+msgstr "Assinatura:"
+
+#: production/templates/delivery_report.html:145
+#: production/templates/delivery_report.html:168
+msgid "Date:"
+msgstr "Data:"
+
+#: production/templates/delivery_report.html:156
+msgid "Responsible:"
+msgstr "Responsável:"
+
+#: production/templates/report.html:42
+msgid "Period from validity"
+msgstr "Período a contar da validade"
+
+#: production/templates/report.html:55
+msgid "Pharmacy Holder Name"
+msgstr "Nome do titular da farmácia"
+
+#: production/templates/report.html:64
+msgid "Address"
+msgstr "Endereço"
+
+#: production/templates/report.html:72
+msgid "Doctor Name"
+msgstr "Nome do médico"
+
+#: production/templates/report.html:90
+msgid "Module Name"
+msgstr "Nome do módulo"
+
+#: production/templates/report.html:111
+msgid "Intake Dosage"
+msgstr "Dosagem de admissão"
+
+#: production/templates/report.html:114
+msgid "Days/Intake Time"
+msgstr "Dias/Tempo de Ingestão"
+
+#: production/templates/report.html:254
+msgid "Handle according to the instructions provided. If in doubt,consult the pharmacist"
+msgstr "Manuseie de acordo com as instruções fornecidas. Em caso de dúvida, consulte o farmacêutico"
+
+#: production/viewsets.py:99 production/viewsets.py:147
+msgid "Please validate plannings first."
+msgstr "Por favor, valide os planejamentos primeiro."
+
+#: production/viewsets.py:169
+msgid "No productions present for this from date and to date"
+msgstr "Não há produções presentes para isso de data e até à data"
+
+#: production/viewsets.py:179
+msgid "removed productions from plannings"
+msgstr "removeu produções de planejamentos"
+
+#: production/viewsets.py:251 production/viewsets.py:337
+msgid "No data is produced in this interval "
+msgstr "Nenhum dado é produzido neste intervalo"
+
+#: production/viewsets.py:265
+msgid "Hospital does not exist"
+msgstr "O hospital não existe"
+
+#: therapeutic_booklets/serializers.py:35
+#: therapeutic_booklets/serializers.py:132
+msgid "Each Hospital must have only 5 Additional Codes"
+msgstr "Cada Hospital deve ter apenas 5 Códigos Adicionais"
+
+#: therapeutic_booklets/serializers.py:40
+#: therapeutic_booklets/serializers.py:103
+#: therapeutic_booklets/serializers.py:118
+msgid "This additionalcode code {} and NC code {} must be different"
+msgstr "este código adicional {} e código nc {} devem ser diferentes"
+
+#: therapeutic_booklets/serializers.py:44
+#: therapeutic_booklets/serializers.py:88
+msgid "The additional {} must be different"
+msgstr "o {} adicional deve ser diferente"
+
+#: therapeutic_booklets/serializers.py:50
+#: therapeutic_booklets/serializers.py:110
+#: therapeutic_booklets/serializers.py:124
+msgid "This additionalcode {} code is already exists"
+msgstr "este código adicional {} já existe"
+
+#: therapeutic_booklets/serializers.py:62
+#: therapeutic_booklets/serializers.py:68
+msgid "This NC code is already exists"
+msgstr "Este código NC já existe"
+
+#: therapeutic_booklets/templates/pdf.html:54
+msgid "Therapeutic booklet medicine list"
+msgstr "Lista de medicamentos de folheto terapêutico"
+
+#: therapeutic_booklets/templates/pdf.html:60
+msgid "Medicine name"
+msgstr "Nome do medicamento"
+
+#: therapeutic_booklets/templates/pdf.html:61
+msgid "National Medication Code"
+msgstr "Código Nacional de Medicamentos"
+
+#: therapeutic_booklets/templates/pdf.html:62
+msgid "Type"
+msgstr "Tipo"
+
+#: therapeutic_booklets/templates/pdf.html:63
+msgid "Price"
+msgstr "Preço"
+
+#: therapeutic_booklets/templates/pdf.html:64
+msgid "ID Group"
+msgstr "Grupo de ID"
+
+#: therapeutic_booklets/templates/pdf.html:65
+msgid "Box Quantity"
+msgstr "Quantidade da caixa"
+
+#: therapeutic_booklets/utils.py:84
+msgid "Error in pdf creation"
+msgstr "Erro na criação de pdf"
+
+#: therapeutic_booklets/viewsets.py:157
+msgid "This field is required."
+msgstr "Este campo é obrigatório."
+
+#: therapeutic_booklets/viewsets.py:173
+msgid "Please select correct file format"
+msgstr "Selecione o formato de arquivo correto"
+
+#: therapeutic_booklets/viewsets.py:177
+msgid "Data is not present to generate report"
+msgstr "Os dados não estão presentes para gerar relatório"
+
+#: timedi/settings.py:223
+msgid "English"
+msgstr "Inglês"
+
+#: timedi/settings.py:224
+msgid "Portuguese"
+msgstr "portuguesa"
+
+#: timedi/settings.py:225
+msgid "Spanish"
+msgstr "espanhol"
+
+#: timedi/settings.py:226
+msgid "French"
+msgstr "francês"
+
+#: timedi_auth/custom_responses.py:3
+msgid "User data saved successfully."
+msgstr "Dados do usuário salvos com sucesso."
+
+#: timedi_auth/custom_responses.py:4
+msgid "User data updated successfully."
+msgstr "Dados do usuário atualizados com sucesso."
+
+#: timedi_auth/custom_responses.py:5
+msgid "User data deleted successfully."
+msgstr "Dados do usuário excluídos com sucesso."
+
+#: timedi_auth/custom_responses.py:8
+msgid "Main sheet data saved successfully."
+msgstr "Dados da planilha principal salvos com sucesso."
+
+#: timedi_auth/custom_responses.py:9
+msgid "Main sheet data updated successfully."
+msgstr "Dados da planilha principal atualizados com sucesso."
+
+#: timedi_auth/custom_responses.py:10
+msgid "Hospital data deleted successfully."
+msgstr "Dados hospitalares apagados com sucesso."
+
+#: timedi_auth/custom_responses.py:13
+msgid "Production Setting data saved successfully."
+msgstr "Dados de configuração de produção salvos com êxito."
+
+#: timedi_auth/custom_responses.py:14
+msgid "Production Setting data updated successfully."
+msgstr "Dados de configuração de produção atualizados com êxito."
+
+#: timedi_auth/custom_responses.py:15
+msgid "Production Setting data deleted successfully."
+msgstr "Dados de configuração de produção excluídos com êxito."
+
+#: timedi_auth/custom_responses.py:18
+msgid "Intermediate Productions data saved successfully."
+msgstr "Dados de produções intermediárias salvos com sucesso."
+
+#: timedi_auth/custom_responses.py:19
+msgid "Intermediate Productions data updated successfully."
+msgstr "Dados de produções intermediárias atualizados com sucesso."
+
+#: timedi_auth/custom_responses.py:20
+msgid "Intermediate Productions data deleted successfully."
+msgstr "Dados de produções intermediárias excluídos com sucesso."
+
+#: timedi_auth/custom_responses.py:23
+msgid "Stock Management data saved successfully."
+msgstr "Dados de gerenciamento de estoque salvos com sucesso."
+
+#: timedi_auth/custom_responses.py:24
+msgid "Stock Management data updated successfully."
+msgstr "Dados de gerenciamento de estoque atualizados com sucesso."
+
+#: timedi_auth/custom_responses.py:25
+msgid "Stock Management data deleted successfully."
+msgstr "Dados de gerenciamento de estoque excluídos com sucesso."
+
+#: timedi_auth/custom_responses.py:28
+msgid "Patient data saved successfully."
+msgstr "Dados do paciente salvos com sucesso."
+
+#: timedi_auth/custom_responses.py:29
+msgid "Patient data updated successfully."
+msgstr "Dados do paciente atualizados com sucesso."
+
+#: timedi_auth/custom_responses.py:30
+msgid "Patient data deleted successfully."
+msgstr "Dados do paciente excluídos com sucesso."
+
+#: timedi_auth/custom_responses.py:33
+msgid "Absence Reason data saved successfully."
+msgstr "Dados de motivo de ausência salvos com êxito."
+
+#: timedi_auth/custom_responses.py:34
+msgid "Absence Reason data updated successfully."
+msgstr "Dados de motivo de ausência atualizados com êxito."
+
+#: timedi_auth/custom_responses.py:35
+msgid "Absence Reason data deleted successfully."
+msgstr "Dados de motivo de ausência excluídos com êxito."
+
+#: timedi_auth/custom_responses.py:38
+msgid "Assign Centre Module data saved successfully."
+msgstr "Atribuir dados do módulo central salvos com êxito."
+
+#: timedi_auth/custom_responses.py:39
+msgid "Assign Centre Module data updated successfully."
+msgstr "Atribuir dados do módulo central atualizados com êxito."
+
+#: timedi_auth/custom_responses.py:40
+msgid "Assign Centre Module data deleted successfully."
+msgstr "Atribuir dados do módulo central excluídos com êxito."
+
+#: timedi_auth/custom_responses.py:43
+msgid "Medicine data saved successfully."
+msgstr "Dados de medicamentos salvos com sucesso."
+
+#: timedi_auth/custom_responses.py:44
+msgid "Medicine data updated successfully."
+msgstr "Dados do medicamento atualizados com sucesso."
+
+#: timedi_auth/custom_responses.py:45
+msgid "Medicine data deleted successfully."
+msgstr "Dados de medicamentos excluídos com sucesso."
+
+#: timedi_auth/custom_responses.py:47
+msgid "Medicine Assigned to Patient."
+msgstr "Medicamento atribuído ao paciente."
+
+#: timedi_auth/custom_responses.py:48
+msgid "Updated Medicine Assigned to Patient."
+msgstr "Medicamento atualizado atribuído ao paciente."
+
+#: timedi_auth/custom_responses.py:49
+msgid "Deleted Medicine Assigned to Patient."
+msgstr "Medicamento deletado atribuído ao paciente."
+
+#: timedi_auth/custom_responses.py:51
+msgid "Posology Planning saved successfully."
+msgstr "Planejamento de Posologia salvo com sucesso."
+
+#: timedi_auth/custom_responses.py:52
+msgid "Posology Planning updated successfully."
+msgstr "Planejamento de Posologia atualizado com sucesso."
+
+#: timedi_auth/custom_responses.py:53
+msgid "Posology Planning deleted successfully."
+msgstr "Planejamento de Posologia deletado com sucesso."
+
+#: timedi_auth/custom_responses.py:55
+msgid "Production saved successfully."
+msgstr "Produção salva com sucesso."
+
+#: timedi_auth/custom_responses.py:56
+msgid "Production Planning updated successfully."
+msgstr "O Production Planning foi atualizado com êxito."
+
+#: timedi_auth/custom_responses.py:57
+msgid "Production Planning deleted successfully."
+msgstr "O Production Planning foi excluído com êxito."
+
+#: timedi_auth/custom_responses.py:59
+msgid "Medicine added to booklet successfully."
+msgstr "Medicamento adicionado ao livreto com sucesso."
+
+#: timedi_auth/mixins.py:15
+msgid "User is not active."
+msgstr "O usuário não está ativo."
+
+#: timedi_auth/mixins.py:17
+msgid "Invalid email_id"
+msgstr "email_id inválido"
+
+#: timedi_auth/models.py:93
+msgid "username"
+msgstr "nome de usuário"
+
+#: timedi_auth/models.py:94
+msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr "Obrigatório. 150 caracteres ou menos. Letras, dígitos e @/./+/-/_ apenas."
+
+#: timedi_auth/models.py:96
+msgid "A user with that username already exists."
+msgstr "Já existe um usuário com esse nome de usuário."
+
+#: timedi_auth/models.py:100
+msgid "superuser status"
+msgstr "status do superusuário"
+
+#: timedi_auth/models.py:103 timedi_auth/models.py:111
+msgid "Designates whether the user can log into this admin site."
+msgstr "Designa se o usuário pode fazer login neste site de administração."
+
+#: timedi_auth/models.py:108
+msgid "staff status"
+msgstr "Status do pessoal"
+
+#: timedi_auth/models.py:165
+msgid "expires at"
+msgstr "expira em"
+
+#: timedi_auth/models.py:167
+msgid "token"
+msgstr "token"
+
+#: timedi_auth/serializers/auth.py:27
+msgid "Token is invalid or expired"
+msgstr "Token inválido ou expirado"
+
+#: timedi_auth/serializers/auth.py:69
+msgid "Old password is not correct"
+msgstr "Senha antiga não está correta"
+
+#: timedi_auth/serializers/auth.py:79
+msgid "Old Password and New Password should not be same"
+msgstr "Senha Antiga e Nova Senha não devem ser iguais"
+
+#: timedi_auth/serializers/auth.py:82
+msgid "New Password and Confirm Password does not match"
+msgstr "Nova senha e Confirmar senha não corresponde"
+
+#: timedi_auth/serializers/user.py:99
+msgid "email field is required"
+msgstr "campo de e-mail é obrigatório"
+
+#: timedi_auth/serializers/user.py:107
+msgid "email already exist"
+msgstr "e-mail já existe"
+
+#: timedi_auth/utils.py:75
+msgid "Please correct the errors below."
+msgstr "Corrija os erros abaixo."
+
+#: timedi_auth/viewsets/auth.py:34 timedi_auth/viewsets/auth.py:171
+msgid "Username {} does not exist."
+msgstr "nome de usuário {} não existe."
+
+#: timedi_auth/viewsets/auth.py:43
+msgid "User logged in successfully"
+msgstr "Usuário logado com sucesso"
+
+#: timedi_auth/viewsets/auth.py:68 timedi_auth/viewsets/auth.py:82
+#: timedi_auth/viewsets/auth.py:113
+msgid "Please enter valid credentials."
+msgstr "Insira credenciais válidas."
+
+#: timedi_auth/viewsets/auth.py:88
+msgid "Impersonated User Session"
+msgstr "Sessão de usuário personificada"
+
+#: timedi_auth/viewsets/auth.py:127
+msgid "User Successfully Logout"
+msgstr "Logout do usuário com sucesso"
+
+#: timedi_auth/viewsets/auth.py:152 timedi_auth/viewsets/auth.py:160
+#: timedi_auth/viewsets/auth.py:167
+msgid "Password reset link successfully sent to your email:{}"
+msgstr "link de redefinição de senha enviado com sucesso para o seu e-mail: {}"
+
+#: timedi_auth/viewsets/auth.py:197
+msgid "Successfully updated the password."
+msgstr "A senha foi atualizada com sucesso."
+
+#: timedi_auth/viewsets/auth.py:199
+msgid "Invalid Reset Link. Please try again."
+msgstr "Link de redefinição inválido. Por favor, tente novamente."
+
+#: timedi_auth/viewsets/auth.py:222
+msgid "Password has been changed"
+msgstr "A senha foi alterada"
+
+#: timedi_auth/viewsets/auth.py:225
+msgid "This is not a new user"
+msgstr "Este não é um novo usuário"
+
+#: timedi_auth/viewsets/auth.py:238
+msgid "Success"
+msgstr "Sucesso"
+
+#: timedi_auth/viewsets/auth.py:241
+msgid "Link is expired, Please try again!"
+msgstr "O link expirou, tente novamente！"
+
+#: timedi_auth/viewsets/user.py:57
+msgid "Another admin present with this account. Can not proceed with this request."
+msgstr "Outro administrador presente com esta conta. Não é possível prosseguir com esta solicitação."
+
+#: timedi_auth/viewsets/user.py:88
+msgid "You cannot delete own account."
+msgstr "Não é possível excluir a própria conta."
+
+#: timedi_auth/viewsets/user.py:92
+msgid "User deleted successfully."
+msgstr "Usuário excluído com sucesso."

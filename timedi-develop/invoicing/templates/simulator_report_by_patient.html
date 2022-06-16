@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load i18n l10n %}
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+<table width="100%" cellpadding="0" cellspacing="0" align="center"
+       style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+    <tr>
+        <td style="padding: 10px;">
+
+            <table width="800" cellpadding="2" cellspacing="0" bgcolor="#fff" align="center" style="padding: 15px;">
+
+
+                <tr>
+                    <td style="font-size: 14px; font-weight: bold; padding: 10px 5px;" align="center">
+                        {% trans 'Billing simulation per Patient' %}
+                    </td>
+                </tr>
+            {% for hospital in hospital_list %}
+                <tr>
+                    <td colspan="4" style="padding: 10px 0;">
+                        <p><b>{% trans 'Hospital Name: ' %}</b> {{ hospital.hospital_name }}</p>
+                        <p><b>{% trans 'Start Date: ' %}</b> {{ from_date }}</p>
+                        <p><b>{% trans 'End Date: ' %}</b> {{ to_date }}</p>
+<!--                        <span style="margin-left: 2px;">{% trans 'Hospital Name' %}</span> <input type="text" name="" value="{{ hospital.hospital_name }} "-->
+<!--                                                                                     placeholder="Timedi 1"-->
+<!--                                                                                     style="border:solid 1px #ccc; height: 30px;margin-left: 20px;">-->
+<!--                        <span style="margin-left: 20px;">{% trans 'Start Date' %}</span> <input type="text" name="" value="{{ from_date }}"-->
+<!--                                                                                  placeholder="dd/mm/yyyy"-->
+<!--                                                                                  style="border:solid 1px #ccc; height: 30px; width: 150px;">-->
+<!--                        <span style="margin-left: 35px">{% trans 'End Date' %}</span> <input type="text" name="" value="{{ to_date }}"-->
+<!--                                                                               placeholder="dd/mm/yyyy"-->
+<!--                                                                               style="border:solid 1px #ccc; height: 30px; width: 150px;">-->
+
+                    </td>
+
+                </tr>
+                {% for module in hospital.assign_centre_modules %}
+                {% for patient in module.patients %}
+
+                <tr>
+                    <td colspan="3" style="padding: 10px 0;">
+                        <p><b>{% trans 'Patient Name: ' %}</b> {{ patient.full_name }}</p>
+
+<!--                        <span style="    margin-left: 2px;">{% trans 'Patient Name' %}</span> <input type="text" name="" value="{{ patient.full_name }}"-->
+<!--                        placeholder="ABC 1" style="border:solid 1px #ccc; height: 30px; width: 250px; margin-left: 26px">-->
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <table width="100%" cellpadding="2" cellspacing="0" align="center"
+                               style="border: solid 1px #ccc;">
+                            <tr>
+                                <td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{% trans 'CN Number' %}
+                                </td>
+                                <td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{% trans 'Medicine Name' %}
+                                </td>
+
+
+                                <td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{% trans 'Boxes' %}
+                                </td>
+                                <td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{% trans 'Barcode' %}</td>
+
+
+                            </tr>
+                            {% for med in patient.details %}
+                            <tr>
+                                <td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{{ med.national_medication_code }}
+                                </td>
+                                <td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{{ med.medicine_name }}
+                                </td>
+                                <td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{{ med.box_quantity }} ({{ med.simulator_stock }})
+                                </td>
+                                <td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center"><img src="data:image/png;base64,{{ med.barcode }}">
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="font-size: 14px; font-weight: bold; padding: 10px 5px;" align="center">
+                    </td>
+                </tr>
+            {% endfor %}
+            {% endfor %}
+            {% endfor %}
+
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+
+</html>

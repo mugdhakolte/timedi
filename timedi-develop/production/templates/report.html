@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+{% load i18n l10n %}
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+<table width="100%" cellpadding="0" cellspacing="0" align="center"
+       style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+    {% for obj in production_list %}
+        {% if forloop.counter|divisibleby:"2" %}
+            <td width="50%" style="border: solid; vertical-align: top;">
+
+        {% else %}
+            <tr>
+            <td width="50%" style="border: solid; vertical-align: top;">
+
+        {% endif %}
+
+                <table style=" padding: 15px; border: black;">
+
+                    <tr>
+                        <td colspan="3">
+                            <p><b>{% trans 'Patient Name: ' %}</b> {{ obj.patient_data.name}}</p>
+<!--                            {% trans 'Patient Name' %}-->
+<!--                            <input type="text" name="" placeholder="Enter Patient Name" value="{{ obj.patient_data.name}}"-->
+<!--                                   style="border:solid 1px #ccc; height: 30px; width: 400px; ">-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <p><b>{% trans 'Period from validity: ' %}</b> {{ obj.patient_data.from_date}} - {{ obj.patient_data.to_date}}</p>
+<!--                            {% trans 'Period from validity' %}-->
+<!--                            <input type="text" name="" placeholder="yyyy/mm/dd" value="{{ obj.patient_data.from_date}}"-->
+<!--                                   style="border: 1px solid #ccc; height: 30px; width: 100px;  text-align: center;">-->
+<!--                            <span style="margin-left: 25px"> T0</span> <input type="text" name=""-->
+<!--                                  value="{{ obj.patient_data.to_date}}" placeholder="yyyy/mm/dd"-->
+<!--                                  style="border:solid 1px #ccc; height: 30px; width: 100px; margin-left: 10px; margin-right: 5px; text-align: center;">-->
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="3">
+                            <p><b>{% trans 'Pharmacy Holder Name: ' %}</b> {{ obj.patient_data.pharmacy_holder}}</p>
+<!--                            {% trans 'Pharmacy Holder Name' %}-->
+<!--                            <input type="text" name="" placeholder="Enter Pharmacy Holder Name" value="{{ obj.patient_data.pharmacy_holder}}"-->
+<!--                                   style="border:solid 1px #ccc; height: 30px; width: 396px;">-->
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <p><b>{% trans 'Address: ' %}</b> {{ obj.patient_data.address}}</p>
+<!--                            <span>{% trans 'Address' %}</span>-->
+<!--                            <input type="text" name="" placeholder="Enter Address" value="{{ obj.patient_data.address}}"-->
+<!--                                   style="border:solid 1px #ccc; height: 60px; width: 400px;">-->
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <p><b>{% trans 'Doctor Name: ' %}</b> {{ obj.patient_data.doctor_name}}</p>
+<!--                            {% trans 'Doctor Name' %}-->
+<!--                            <input type="text" name="" placeholder="Enter Doctor Name" value="{{ obj.patient_data.doctor_name}}"-->
+<!--                                   style="border:solid 1px #ccc; height: 30px; width: 400px; ">-->
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <p><b>{% trans 'Hospital Name: ' %}</b> {{ obj.patient_data.hospital}}</p>
+<!--                            {% trans 'Hospital Name' %}-->
+<!--                            <input type="text" name="" placeholder="Enter Hospital Name" value="{{ obj.patient_data.hospital}}"-->
+<!--                                   style="border:solid 1px #ccc; height: 30px; width: 400px; ">-->
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <p><b>{% trans 'Module Name: ' %}</b> {{ obj.patient_data.module}}</p>
+<!--                            {% trans 'Module Name' %}-->
+<!--                            <input type="text" name="" placeholder="Enter Module Name" value="{{ obj.patient_data.module}}"-->
+<!--                                   style="border:solid 1px #ccc; height: 30px; width: 400px; ">-->
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+
+                            <table cellpadding="2" cellspacing="0" align="center"
+                                   style="border: solid 1px #ccc; width:530px;">
+                                <tr>
+                                    <td  style="word-wrap: break-word; padding: 10px 5px; max-width: 65px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                        align="center">{% trans 'CN Number' %}
+                                    </td>
+
+                                    <td  style="word-wrap: break-word; padding: 10px 5px; max-width: 65px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                        align="center">{% trans 'Medicine Name' %}
+                                    </td>
+                                    <td style="word-wrap: break-word; padding: 10px 5px; max-width: 200px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                        align="center">{% trans 'Intake Dosage' %}
+                                    </td>
+                                    <td style="word-wrap: break-word; padding: 10px 5px; max-width: 200px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                        align="center">{% trans 'Days/Intake Time' %}
+                                    </td>
+                                </tr>
+                                {% for posologies in obj.medicine_data.posologies %}
+                                <tr>
+
+                                    {% if "cycle_posology" in posologies %}
+
+                                        <td style="word-wrap: break-word; padding: 10px 5px; max-width: 65px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                        align="center">{{ obj.medicine_data.national_medication_code}}
+                                        </td>
+
+                                         <td style="word-wrap: break-word; padding: 10px 5px; max-width: 65px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                         align="center">{{ obj.medicine_data.medicine_name}}</td>
+
+
+                                        <td style="word-wrap: break-word; padding: 10px 5px; max-width: 200px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                            align="center">
+
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                {% for dosage in posologies.cycle_posology.dosage %}
+                                                <tr>
+                                                    <td style="border-bottom: solid 1px #ccc;">{{ dosage }}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </table>
+
+                                        <td style="word-wrap: break-word; padding: 10px 5px; max-width: 200px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                            align="center">{% for day in posologies.cycle_posology.days %} {{ day }} {% endfor %}</td>
+
+                                    {% elif "standard_posology" in posologies %}
+
+                                        <td style="word-wrap: break-word; padding: 10px 5px; max-width: 65px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                        align="center">{{ obj.medicine_data.national_medication_code}}
+                                        </td>
+
+                                         <td style="word-wrap: break-word; padding: 10px 5px; max-width: 65px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                         align="center">{{ obj.medicine_data.medicine_name}}
+                                         </td>
+
+                                        <td style="word-wrap: break-word; padding: 10px 5px; max-width: 200px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                        align="center"> <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                {% for dosage in posologies.standard_posology.dosage %}
+                                                    <tr>
+                                                        <td style="border-bottom: solid 1px #ccc;">{{ dosage }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </table>
+                                        </td>
+
+                                        <td style="word-wrap: break-word; padding: 10px 5px; max-width: 200px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                            align="center">
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                {% for day in posologies.standard_posology.days %}
+                                                    <tr>
+                                                        <td style="border-bottom: solid 1px #ccc;">{{ day }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </table>
+                                        </td>
+
+                                    {% elif "specific_posology" in posologies %}
+                                         <td style="word-wrap: break-word; padding: 10px 5px; max-width: 65px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                        align="center">{{ obj.medicine_data.national_medication_code}}
+                                        </td>
+
+                                         <td style="word-wrap: break-word; padding: 10px 5px; max-width: 65px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                         align="center">{{ obj.medicine_data.medicine_name}}</td>
+
+
+                                        <td style="word-wrap: break-word; padding: 10px 5px; max-width: 200px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                         align="center">
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                {% for data in posologies.specific_posology %}
+                                                <tr>
+                                                    <td style="border-bottom: solid 1px #ccc;"> {{ data.dosage }}</td>
+                                                </tr>
+                                                <tr>
+                                                <td>&nbsp;</td>
+                                                </tr>
+                                                {% endfor %}
+                                        </table>
+                                        </td>
+
+                                        <td style="word-wrap: break-word; padding: 10px 5px; max-width: 200px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                        align="center">
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                            {% for data in posologies.specific_posology %}
+                                                <tr>
+                                                    <td style="border-bottom: solid 1px #ccc;"> {{ data.days }} {% for intake in data.intake %}({{intake}}){% endfor %} </td>
+                                                </tr>
+                                                <tr>
+                                                <td>&nbsp;</td>
+                                                 </tr>
+                                            {% endfor %}
+                                        </table>
+                                        </td>
+
+                                    {% elif "each_posologies" in posologies %}
+                                        <td style="word-wrap: break-word; padding: 10px 5px; max-width: 65px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                        align="center">{{ obj.medicine_data.national_medication_code}}
+                                        </td>
+
+                                         <td style="word-wrap: break-word; padding: 10px 5px; max-width: 65px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                         align="center">{{ obj.medicine_data.medicine_name}}</td>
+
+                                        <td style="word-wrap: break-word; padding: 10px 5px; max-width: 200px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                         align="center">{{posologies.each_posologies.dosage}}</td>
+
+                                        <td style="word-wrap: break-word;padding: 10px 5px; max-width: 200px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                        align="center">{{posologies.each_posologies.intake}}</td>
+
+                                    {% elif "from_to_posologies" in posologies %}
+                                        <td style="word-wrap: break-word; padding: 10px 5px; max-width: 65px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                        align="center">{{ obj.medicine_data.national_medication_code}}
+                                        </td>
+
+                                         <td style="word-wrap: break-word; padding: 10px 5px; max-width: 65px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                         align="center">{{ obj.medicine_data.medicine_name}}</td>
+
+                                        <td style="word-wrap: break-word; padding: 10px 5px; max-width: 200px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                         align="center">{{posologies.from_to_posologies.dosage}}</td>
+
+                                        <td style="word-wrap: break-word; padding: 10px 5px; max-width: 200px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                        align="center">{{posologies.from_to_posologies.intake}}</td>
+                                    {% endif %}
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" style="padding: 10px 0;" align="center">
+                            <p>{% trans 'Handle according to the instructions provided. If in doubt,consult the pharmacist' %}</p>
+
+                        </td>
+                    </tr>
+                </table>
+        {% if forloop.counter|divisibleby:"2" %}
+            </td></tr>
+
+        {% else %}
+            </td>
+
+        {% endif %}
+    {% endfor %}
+
+                </table>
+            </td>
+        </tr>
+
+</table>
+
+
+</body>
+
+</html>

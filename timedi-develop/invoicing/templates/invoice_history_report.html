@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load i18n l10n %}
+{% load date_format %}
+
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<table width="100%" cellpadding="0" cellspacing="0" align="center"
+		style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+		<tr>
+			<td style="padding: 10px;">
+				<table width="800" cellpadding="2" cellspacing="0" bgcolor="#fff" align="center" style="padding: 15px;">
+
+
+					<tr>
+						<td colspan="3" style="padding: 10px 0;">
+							<span style="margin-left: 2px;">{% trans 'From Date' %}</span> <input type="text" name="" value="{{ from_date}}"
+                                                                                                  placeholder="2020/07/20"
+								style="border:solid 1px #ccc; height: 30px; width: 150px;margin-left: 20px">
+							<span style="margin-left: 62px">{% trans 'To Date' %}</span> <input type="text" name="" value="{{ to_date}}"
+                                                                                                placeholder="2020/07/30"
+								style="border:solid 1px #ccc; height: 30px; width: 150px; margin-left: 39px;">
+
+						</td>
+
+					</tr>
+					{% for patient_data in hospital_list %}
+					<tr>
+						<td colspan="3" style="padding: 10px 0;">
+							<span style="    margin-left: 2px;">{% trans 'Hospital Name' %}</span> <input type="text" name=""
+								value="{{ patient_data.hospital_name }}" placeholder="ABC"
+								style="border:solid 1px #ccc; height: 30px; width: 150px; margin-right: 60px;">
+							<span>{% trans 'Patient Name' %}</span>  <input type="text" name="" value="{{ patient_data.patient_name }}"
+                                                                            placeholder="ABC"
+								style="border:solid 1px #ccc; height: 30px; width: 155px; margin-left: 10px;">
+						</td>
+
+					</tr>
+					<tr>
+						<td colspan="3">
+							<table width="100%" cellpadding="2" cellspacing="0" align="center"
+								style="border: solid 1px #ccc;">
+								<tr>
+									<td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{% trans 'CN Number' %}</td>
+									<td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{% trans 'Medicine Name' %}</td>
+									<td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{% trans 'Entry/Out' %}</td>
+									<td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{% trans 'Quantity' %}</td>
+									<td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{% trans 'Box' %}</td>
+									<td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{% trans 'Date' %}</td>
+									<td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{% trans 'User' %}</td>
+								</tr>
+                                {% for obj in patient_data.history_data %}
+                                <tr>
+									<td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{{obj.national_medication_code}}</td>
+									<td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{{obj.medicine_name}}</td>
+									<td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{{obj.type}}</td>
+									<td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{{obj.quantity}}</td>
+									<td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{{obj.box_quantity}}</td>
+									<td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{{ obj.created_at|created_at_format }}</td>
+									<td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+										align="center">{{obj.user_name}}</td>
+
+								</tr>
+                                {% endfor %}
+
+							</table>
+
+
+						</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+
+</html>

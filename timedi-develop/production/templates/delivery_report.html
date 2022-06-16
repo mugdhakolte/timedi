@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+{% load i18n l10n %}
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+    </style>
+</head>
+
+<body>
+<table width="100%" cellpadding="0" cellspacing="0" align="center"
+		style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+    <tr>
+        <td style="padding: 10px;">
+            <table width="800" cellpadding="2" cellspacing="0" bgcolor="#fff" align="center" style="padding: 15px;">
+                <tr>
+
+                    <td align="center"><img src="data:image/png;base64,{{ production_list.barcode }}"></td>
+
+                </tr>
+
+                <tr>
+                    <td colspan="4" style="padding: 20px 0;">
+                        <p><b>{% trans 'Hospital Name: ' %}</b> {{ production_list.hospital_name }}</p>
+<!--                        {% trans 'Hospital Name' %}-->
+<!--                        <input type="text" name="" value="{{ production_list.hospital_name }}"-->
+<!--                               placeholder="hospital name"-->
+<!--                               style="border:solid 1px #ccc; height: 30px; width: 400px; margin-left: 5px; text-align: center;">-->
+                        <p><b>{% trans 'Production Date: ' %}</b> {{ production_list.production_date }}</p>
+<!--                        <span style="margin-left: 20px">{% trans 'Production Date' %}</span> <input type="text" name=""-->
+<!--                               value="{{ production_list.production_date }}" placeholder="yyyy/mm/dd"-->
+<!--							   style="border:solid 1px #ccc; height: 30px; width: 100px; margin-left: 10px; margin-right: 5px; text-align: center;">-->
+
+                    </td>
+
+
+                </tr>
+
+                <tr>
+
+                    <td colspan=" 3">
+                        <table width="100%" cellpadding="2" cellspacing="0" align="center">
+                            <tr>
+                                <td style="font-size: 14px; font-weight: bold; padding: 10px 5px; border-left: solid 1px #ccc; border-right: solid 1px #ccc; border-top: solid 1px #ccc; width: 546px"
+                                    align="center">{% trans 'Pharmacy' %}
+                                </td>
+                                <td style="font-size: 14px; font-weight: bold; padding: 10px 5px; border-left: solid 1px #ccc;
+								border-right: solid 1px #ccc;
+								border-top: solid 1px #ccc;" align="center">{% trans 'Hospital' %}
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table width="100%" cellpadding="2" cellspacing="0" align="center"
+                               style="border: solid 1px #ccc;">
+                            <tr>
+                                <td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{% trans 'Patient Name' %}
+                                </td>
+
+                                <td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{% trans 'From Date' %}
+                                </td>
+                                <td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{% trans 'To Date' %}
+                                </td>
+                                <td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{% trans 'Total' %}<br/> {% trans 'Intake' %}
+                                </td>
+                                <td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{% trans 'Comments' %}
+                                </td>
+                                <td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{% trans 'Ok' %}
+                                </td>
+                                <td width="150"
+                                    style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{% trans 'Comments' %}
+                                </td>
+                                <td style="padding: 10px 5px; font-weight: bold; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{% trans 'Ok' %}
+                                </td>
+                            </tr>
+							{% for obj in production_list.patients %}
+                            <tr>
+                                <td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{{ obj.patient_name }}
+                                </td>
+
+                                <td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{{ obj.from_date }}
+                                </td>
+                                <td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{{ obj.to_date }}
+                                </td>
+                                <td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center">{{ obj.intake }}
+                                </td>
+
+                                <td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center"></td>
+                                <td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center"><input type="checkbox" name=""></td>
+
+                                <td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center"></td>
+                                <td style="padding: 10px 5px; border-right: solid 1px #ccc; border-bottom: solid 1px #ccc;"
+                                    align="center"><input type="checkbox" name=""></td>
+                            </tr>
+							{% endfor %}
+                        </table>
+
+                        <table width="100%" cellpadding="2" cellspacing="0" align="center">
+                            <tr>
+                                <td style="padding: 15px 0;" align="center">{% trans 'Total Patients:'  %} <input type="text" name=""
+								   	placeholder="6" value="{{ production_list.patient_count }}"
+							   		style="border:solid 1px #ccc; height: 30px; width: 40px; margin-left: 5px; text-align: center;">
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table width="100%" cellpadding="2" cellspacing="0" align="center">
+                            <tr>
+                                <td>
+                                    <table width="50%" cellpadding="2" cellspacing="0">
+                                        <tr>
+                                            <td style="padding: 5px 0;" align="left">{% trans 'Pharmacist:' %}</td>
+                                            <td><input type="text" name="" placeholder=""
+											   	style="border:solid 1px #ccc; height: 30px; width: 160px; margin-left: 5px; text-align: center;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 5px 0;" align="left">{% trans 'Signature:' %}</td>
+                                            <td><input type="text" name="" placeholder=""
+                                                       style="border:solid 1px #ccc; height: 30px; width: 160px; margin-left: 5px; text-align: center;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 5px 0;" align="left">{% trans 'Date:' %}</td>
+                                            <td valign="middle"><input type="text" name="" placeholder="yyyy/mm/dd"
+                                                                       style="border:solid 1px #ccc; height: 30px; width: 80px; margin-left: 5px; text-align: center;">
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td align="right">
+                                    <table width="50%" cellpadding="2" cellspacing="0">
+                                        <tr>
+                                            <td style="padding: 5px 0;" align="left">{% trans 'Responsible:' %}</td>
+                                            <td><input type="text" name="" placeholder=""
+                                                       style="border:solid 1px #ccc; height: 30px; width: 160px; margin-left: 5px; text-align: center;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 5px 0;" align="left">{% trans 'Signature:' %}</td>
+                                            <td><input type="text" name="" placeholder=""
+                                                       style="border:solid 1px #ccc; height: 30px; width: 160px; margin-left: 5px; text-align: center;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 5px 0;" align="left">{% trans 'Date:' %}</td>
+                                            <td valign="middle"><input type="text" name="" placeholder="yyyy/mm/dd"
+                                                                       style="border:solid 1px #ccc; height: 30px; width: 80px; margin-left: 5px; text-align: center;">
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+
+</html>

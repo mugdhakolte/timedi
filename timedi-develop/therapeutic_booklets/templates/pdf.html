@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "NA//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+{% load i18n l10n %}
+<html>
+    <head>
+        <title>Title</title>
+        <style type="text/css">
+            body {
+                fontNAweight: 200;
+                fontNAsize: 14px;
+            }
+            .header {
+                fontNAsize: 20px;
+                fontNAweight: 100;
+                textNAalign: center;
+                color: #007cae;
+            }
+            .title {
+                fontNAsize: 22px;
+                fontNAweight: 100;
+               /* textNAalign: right;*/
+               padding: 10px 20px 0px 20px;
+            }
+            .title span {
+                color: #007cae;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                textNAalign: left !important;
+                /*marginNAleft: 40%;*/
+            }
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                backgroundNAcolor: #fff; /* Modern Browsers */
+            }
+        </style>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div class='header'>
+                <table width="100%" style="margin-bottom: 60px;">
+                    <th style="float:left">
+                        <img src="https://www.elcajoninteligente.es/img/timedi-logo.png" heigth="200px" width="200px">
+                    </th>
+                    <th style="float:right; margin-top: 35px; border:0px solid black">
+                        {{ date }}
+                    </th>
+                </table>
+
+                <div style="background-color:#009ed1; border:1px solid black; text-align:center;
+                             color:white; font-size: xx-large; margin-top:50px; margin-bottom: 50px; padding:10px;">
+                    {% trans 'Therapeutic booklet medicine list' %}
+                </div>
+            </div>
+        <div>
+            <table width="100%" border="1px solid black" style="border-collapse:collapse">
+        <tr style="background-color:grey;x ">
+            <th style="border-collapse: collapse; height: 46px; border: 1px solid black">{% trans 'Medicine name' %}</th>
+            <th style="border-collapse: collapse; height: 46px; border: 1px solid black">{% trans 'National Medication Code' %}</th>
+            <th style="border-collapse: collapse; height: 46px; border: 1px solid black">{% trans 'Type' %}</th>
+            <th style="border-collapse: collapse; height: 46px; border: 1px solid black">{% trans 'Price' %}</th>
+            <th style="border-collapse: collapse; height: 46px; border: 1px solid black">{% trans 'ID Group' %}</th>
+            <th style="border-collapse: collapse; height: 46px; border: 1px solid black">{% trans 'Box Quantity' %}</th>
+        </tr>
+        {% for obj in medicine_list %}
+            <tr style="text-align:center; margin-top: 75px; padding:5px; border:1px solid black">
+                <td> {% if obj.medicine_name is None %} NA{% else %} {{obj.medicine_name}}{% endif %}</td>
+                <td> {% if obj.national_medication_code is None %} NA{% else %} {{obj.national_medication_code}} {% endif %}</td>
+                <td> {% if obj.type is None %} NA{% else %} {{obj.type}} {% endif %}</td>
+                <td> {% if obj.price is None %}NA{% else %} {{obj.price}} {% endif %}</td>
+                <td>  </td>
+                <td>{% if obj.units_per_box is None %} NA{% else %} {{obj.units_per_box}} {% endif %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    </div>
+    </div>
+    </body>
+</html>
